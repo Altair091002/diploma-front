@@ -57,7 +57,7 @@ export class AcademyService
      */
     getCategories(): Observable<Category[]>
     {
-        return this._httpClient.get<Category[]>('api/apps/academy/categories').pipe(
+        return this._httpClient.get<Category[]>('http://localhost:8081/fizmath/academy/api/apps/category').pipe(
             tap((response: any) => {
                 this._categories.next(response);
             })
@@ -69,7 +69,7 @@ export class AcademyService
      */
     getCourses(): Observable<Course[]>
     {
-        return this._httpClient.get<Course[]>('api/apps/academy/courses').pipe(
+        return this._httpClient.get<Course[]>('http://localhost:8081/fizmath/academy/api/apps/courses').pipe(
             tap((response: any) => {
                 this._courses.next(response);
             })
@@ -81,7 +81,7 @@ export class AcademyService
      */
     getCourseById(id: string): Observable<Course>
     {
-        return this._httpClient.get<Course>('api/apps/academy/courses/course', {params: {id}}).pipe(
+        return this._httpClient.get<Course>('http://localhost:8081/fizmath/academy/api/apps/course', {params: {id}}).pipe(
             map((course) => {
 
                 // Update the course
