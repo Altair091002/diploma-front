@@ -12,6 +12,8 @@ export class AuthService
     }
     private _authenticated: boolean = false;
 
+    private baseUrl = 'http://localhost:8081/fizmath'
+
     constructor(
         private _httpClient: HttpClient,
         private _userService: UserService
@@ -47,11 +49,11 @@ export class AuthService
             return throwError('User is already logged in.');
         }
 
-        return this._httpClient.post('api/auth/sign-in', credentials).pipe(
+        return this._httpClient.post(this.baseUrl + '/api/auth/signin', credentials).pipe(
             switchMap((response: any) => {
 
                 // Store the access token in the local storage
-                this.accessToken = response.accessToken;
+                this.accessToken = response.token;
 
                 // Set the authenticated flag to true
                 this._authenticated = true;
@@ -119,9 +121,9 @@ export class AuthService
     }
 
 
-    signUp(user: { name: string; email: string; password: string; company: string }): Observable<any>
+    signUp(user: { name: string; surname: string; birthday: string; role: string; email: string; password: string; company: string }): Observable<any>
     {
-        return this._httpClient.post('api/auth/sign-up', user);
+        return this._httpClient.post(this.baseUrl + '/api/auth/signup', user);
     }
 
 

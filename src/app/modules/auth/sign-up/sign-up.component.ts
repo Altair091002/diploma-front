@@ -24,9 +24,6 @@ export class AuthSignUpComponent implements OnInit
     signUpForm: UntypedFormGroup;
     showAlert: boolean = false;
 
-    /**
-     * Constructor
-     */
     constructor(
         private _authService: AuthService,
         private _formBuilder: UntypedFormBuilder,
@@ -37,33 +34,21 @@ export class AuthSignUpComponent implements OnInit
     {
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * On init
-     */
     ngOnInit(): void
     {
         // Create the form
         this.signUpForm = this._formBuilder.group({
-                name      : ['', Validators.required],
-                email     : ['', [Validators.required, Validators.email]],
-                password  : ['', Validators.required],
-                company   : [''],
+                name      : ['tagybaska', Validators.required],
+                email     : ['newTest2@gmail.com', [Validators.required, Validators.email]],
+                password  : ['qwerty1234', Validators.required],
+                surname : ['Kerimbay', Validators.required],
+                birthDate : [new Date(), Validators.required],
+                role : ['student', Validators.required],
                 agreements: ['', Validators.requiredTrue]
             }
         );
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Public methods
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * Sign up
-     */
     signUp(): void
     {
         // Do nothing if the form is invalid
@@ -82,8 +67,8 @@ export class AuthSignUpComponent implements OnInit
         this._authService.signUp(this.signUpForm.value)
             .subscribe(
                 (response) => {
-
                     // Navigate to the confirmation required page
+                    this.dialogRef.close();
                     this._router.navigateByUrl('/confirmation-required');
                 },
                 (response) => {

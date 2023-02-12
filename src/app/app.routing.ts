@@ -94,20 +94,11 @@ export const appRoutes: Route[] = [
                 {path: 'file-manager', loadChildren: () => import('app/modules/apps/file-manager/file-manager.module').then(m => m.FileManagerModule)},
             ]},
 
-            // Pages
             {path: 'pages', children: [
 
                 // Error
                 {path: 'error', children: [
                     {path: '404', loadChildren: () => import('app/modules/pages/error/error-404/error-404.module').then(m => m.Error404Module)},
-                ]},
-
-                // Invoice
-                {path: 'invoice', children: [
-                    {path: 'printable', children: [
-                        {path: 'compact', loadChildren: () => import('app/modules/pages/invoice/printable/compact/compact.module').then(m => m.CompactModule)},
-                        {path: 'modern', loadChildren: () => import('app/modules/pages/invoice/printable/modern/modern.module').then(m => m.ModernModule)}
-                    ]}
                 ]},
 
                 // Pricing

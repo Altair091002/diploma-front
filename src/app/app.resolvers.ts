@@ -37,7 +37,6 @@ export class InitialDataResolver implements Resolve<any>
         return forkJoin([
             this._navigationService.get(),
             this._shortcutsService.getAll(),
-            this._userService.get()
         ]);
     }
 }

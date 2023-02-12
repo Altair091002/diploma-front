@@ -43,8 +43,8 @@ export class AuthSignInComponent implements OnInit
         this.signInForm = this._formBuilder.group({
             // hughes.brian@company.com
             // admin
-            email     : ['hughes.brian@company.com', [Validators.required, Validators.email]],
-            password  : ['admin', Validators.required],
+            email     : ['Kairuddin@gmail.com', [Validators.required, Validators.email]],
+            password  : ['qwerty1234', Validators.required],
             rememberMe: ['']
         });
     }
@@ -102,7 +102,10 @@ export class AuthSignInComponent implements OnInit
     openDialog(component: any): void {
         this.dialogRef.close();
 
-        const dialogRef = this.dialog.open(component);
+        const dialogRef = this.dialog.open(component, {
+            panelClass: "overflow-y-hidden",
+            maxHeight: 600
+        });
         dialogRef.afterClosed().subscribe(() => {
             console.log('The dialog was closed');
         });

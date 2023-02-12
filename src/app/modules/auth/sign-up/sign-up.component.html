@@ -27,17 +27,6 @@
                 [formGroup]="signUpForm"
                 #signUpNgForm="ngForm">
 
-            <!-- Name field -->
-            <mat-form-field class="w-full">
-                <mat-label>Full name</mat-label>
-                <input
-                        id="name"
-                        matInput
-                        [formControlName]="'name'">
-                <mat-error *ngIf="signUpForm.get('name').hasError('required')">
-                    Full name is required
-                </mat-error>
-            </mat-form-field>
 
             <!-- Email field -->
             <mat-form-field class="w-full">
@@ -82,14 +71,39 @@
                 </mat-error>
             </mat-form-field>
 
-            <!-- Company field -->
+
+            <!-- Name field -->
             <mat-form-field class="w-full">
-                <mat-label>Company</mat-label>
+                <mat-label>Full name</mat-label>
                 <input
-                        id="company-confirm"
+                        id="name"
                         matInput
-                        [formControlName]="'company'">
+                        [formControlName]="'name'">
+                <mat-error *ngIf="signUpForm.get('name').hasError('required')">
+                    Full name is required
+                </mat-error>
             </mat-form-field>
+
+            <!-- Surname field -->
+            <mat-form-field class="w-full">
+                <mat-label>Surname</mat-label>
+                <input
+                        id="surname"
+                        matInput
+                        [formControlName]="'surname'">
+                <mat-error *ngIf="signUpForm.get('surname').hasError('required')">
+                    Surname is required
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Role field -->
+            <mat-button-toggle-group class="w-full justify-around" [formControlName]="'role'" aria-label="Role">
+                <mat-button-toggle value="student">Student</mat-button-toggle>
+                <mat-button-toggle value="teacher">Teacher</mat-button-toggle>
+            </mat-button-toggle-group>
+            <mat-error *ngIf="signUpForm.get('role').hasError('required')">
+                Role is required
+            </mat-error>
 
             <!-- ToS and PP -->
             <div class="inline-flex items-end w-full mt-1.5">
