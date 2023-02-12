@@ -36,10 +36,10 @@
                     <a [routerLink]="['/home']" class="flex">
                         <div class="hidden lg:flex">
                             <img
-                                    class="dark:hidden w-24"
+                                    class="dark:hidden w-30"
                                     src="assets/images/logo/logo-text.svg">
                             <img
-                                    class="hidden dark:flex w-24"
+                                    class="hidden dark:flex w-30"
                                     src="assets/images/logo/logo-text-on-dark.svg">
                         </div>
                         <img
@@ -68,9 +68,15 @@
                 <user></user>
             </div>
             <div *ngIf="!isUserAuthenticated" class="flex items-center pl-2">
-                <button (click)="openDialog()" class="text-sm font-medium text-primary-500 hover:text-primary-600">Sign
+                <button mat-flat-button [color]="'primary'" (click)="openDialog()" class="ml-2 mr-1">Sign
                     In
                 </button>
+<!--                <button-->
+<!--                        mat-flat-button-->
+<!--                        [color]="'primary'">-->
+<!--                    <mat-icon [svgIcon]="'heroicons_outline:cursor-click'"></mat-icon>-->
+<!--                    <span class="ml-2 mr-1">Join For Free</span>-->
+<!--                </button>-->
             </div>
         </div>
 

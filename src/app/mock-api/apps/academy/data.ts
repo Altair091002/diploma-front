@@ -1,4 +1,7 @@
 /* eslint-disable */
+import {OnInit} from "@angular/core";
+
+// export class AcademyService implements OnInit
 export const categories = [
     {
         id   : '9a67dff7-3c38-4052-a335-0cef93438ff6',

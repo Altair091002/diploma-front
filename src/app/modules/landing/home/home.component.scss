@@ -1,0 +1,52 @@
+.class_img1 {
+  min-width: 30px;
+  min-height: 100px;
+  background-image: url("../../../../assets/images/landing/icons/math_icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+}
+.class_img2 {
+  min-width: 30px;
+  min-height: 100px;
+  background-image: url("../../../../assets/images/landing/icons/physics.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+}
+.class_item1:hover {
+  cursor: pointer;
+  //background: linear-gradient(90.26deg, #FF7070 0.21%, rgba(255, 112, 112, 0.65) 97.38%);
+  background: linear-gradient(90.26deg, #AA80FF , rgba(160, 113, 255, 0.65) 97.38%);
+  .class_text {
+    color: white;
+  }
+
+  .class_img1 {
+    min-width: 30px;
+    min-height: 100px;
+    background-image: url("../../../../assets/images/landing/icons/math_hover.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+  }
+}
+.class_item2:hover {
+  cursor: pointer;
+  background: linear-gradient(90.26deg, #FF7070 0.21%, rgba(255, 112, 112, 0.65) 97.38%);
+  //background: linear-gradient(90.26deg, #AA80FF , rgba(160, 113, 255, 0.65) 97.38%);
+  .class_text {
+    color: white;
+  }
+
+  .class_img2 {
+    min-width: 30px;
+    min-height: 100px;
+    background-image: url("../../../../assets/images/landing/icons/pysics_hover.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+  }
+}
+.transition { transition: .3s cubic-bezier(.3, 0, 0, 1.3) }
+
