@@ -57,7 +57,7 @@ export class AcademyService
      */
     getCategories(): Observable<Category[]>
     {
-        return this._httpClient.get<Category[]>('http://localhost:8081/fizmath/academy/api/apps/category').pipe(
+        return this._httpClient.get<Category[]>('http://localhost:8081/fizmath/academy/api/apps/categories').pipe(
             tap((response: any) => {
                 this._categories.next(response);
             })
