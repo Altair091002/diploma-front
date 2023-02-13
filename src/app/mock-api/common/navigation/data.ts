@@ -33,6 +33,29 @@ export const defaultNavigation: FuseNavigationItem[] = [
         ]
     },
     {
+        id      : 'academy-settings',
+        title   : 'Academy Settings',
+        subtitle: 'Unique academy settings',
+        type    : 'group',
+        icon : 'heroicons_outline:phone',
+        children: [
+            {
+                id   : 'settings.category',
+                title: 'Course settings',
+                type : 'basic',
+                link : '/academy-settings/category',
+                icon : 'heroicons_outline:pencil',
+            },
+            {
+                id   : 'settings.course',
+                title: 'Course settings',
+                type : 'basic',
+                link : '/academy-settings/course',
+                icon : 'heroicons_outline:pencil',
+            },
+        ]
+    },
+    {
         id   : 'courses',
         title: 'Courses',
         subtitle: 'Custom made application designs',
@@ -110,6 +133,13 @@ export const horizontalNavigation: FuseNavigationItem[] = [
         title   : 'Dashboards',
         type    : 'group',
         icon    : 'heroicons_outline:home',
+        children: []
+    },
+    {
+        id      : 'academy-settings',
+        title   : 'Academy Settings',
+        type    : 'group',
+        icon : 'heroicons_outline:phone',
         children: []
     },
     {

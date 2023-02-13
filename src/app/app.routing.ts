@@ -82,6 +82,14 @@ export const appRoutes: Route[] = [
         },
         children   : [
 
+            // Admin tool for category and course
+            {
+                path: 'academy-settings', children: [
+                    {path: 'category', loadChildren: () => import('app/modules/admin/academy-settings/academy-category/academy-category.module').then(m => m.AcademyCategoryModule)},
+                    {path: 'course', loadChildren: () => import('app/modules/admin/academy-settings/academy-course/academy-course.module').then(m => m.AcademyCourseModule)},
+                ]
+            },
+
             // Dashboards
             {path: 'dashboards', children: [
                 {path: 'analytics', loadChildren: () => import('app/modules/admin/dashboards/analytics/analytics.module').then(m => m.AnalyticsModule)},
