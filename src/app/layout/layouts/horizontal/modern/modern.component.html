@@ -78,9 +78,9 @@
 <!--                    <span class="ml-2 mr-1">Join For Free</span>-->
 <!--                </button>-->
             </div>
+            <mat-slide-toggle (change)="setScheme($event)"></mat-slide-toggle>
         </div>
-
-        <!-- Content -->
+            <!-- Content -->
         <div class="flex flex-col flex-auto w-full">
             <!-- *ngIf="true" hack is required here for router-outlet to work correctly.
                  Otherwise, layout changes won't be registered and the view won't be updated! -->

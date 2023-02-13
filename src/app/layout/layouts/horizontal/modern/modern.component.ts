@@ -8,6 +8,9 @@ import { NavigationService } from 'app/core/navigation/navigation.service';
 import {AuthService} from "../../../../core/auth/auth.service";
 import {MatDialog} from "@angular/material/dialog";
 import {AuthSignInComponent} from "../../../../modules/auth/sign-in/sign-in.component";
+import {AppConfig, Scheme} from "../../../../core/config/app.config";
+import {FuseConfigService} from "../../../../../@fuse/services/config";
+import {MatSlideToggleChange} from "@angular/material/slide-toggle";
 
 @Component({
     selector     : 'modern-layout',
@@ -18,6 +21,7 @@ export class ModernLayoutComponent implements OnInit, OnDestroy
 {
     isScreenSmall: boolean;
     navigation: Navigation;
+    config: AppConfig;
     private _unsubscribeAll: Subject<any> = new Subject<any>();
 
     isUserAuthenticated = this.authService.authenticated;
@@ -28,6 +32,7 @@ export class ModernLayoutComponent implements OnInit, OnDestroy
         private _navigationService: NavigationService,
         private _fuseMediaWatcherService: FuseMediaWatcherService,
         private _fuseNavigationService: FuseNavigationService,
+        private _fuseConfigService: FuseConfigService,
 
         private authService: AuthService,
         private dialog: MatDialog
@@ -43,6 +48,14 @@ export class ModernLayoutComponent implements OnInit, OnDestroy
 
     ngOnInit(): void
     {
+        // Subscribe to config changes
+        this._fuseConfigService.config$
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe((config: AppConfig) => {
+
+                // Store the config
+                this.config = config;
+            });
         // Subscribe to navigation data
         this._navigationService.navigation$
             .pipe(takeUntil(this._unsubscribeAll))
@@ -68,6 +81,16 @@ export class ModernLayoutComponent implements OnInit, OnDestroy
         this._unsubscribeAll.complete();
     }
 
+    /*
+     * Set the scheme on the config
+     */
+    setScheme(value: MatSlideToggleChange): void
+    {
+        // this._fuseConfigService.config = { scheme: 'light' };
+        // if (value.checked)
+        //     this._fuseConfigService.config = { scheme: 'dark' };
+        this._fuseConfigService.config = { scheme: value.checked ? 'dark' : 'light' };
+    }
 
     toggleNavigation(name: string): void
     {
