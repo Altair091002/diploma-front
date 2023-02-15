@@ -7,6 +7,9 @@ import { UserService } from 'app/core/user/user.service';
 @Injectable()
 export class AuthService
 {
+    set authenticated(value: boolean) {
+        this._authenticated = value;
+    }
     get authenticated(): boolean {
         return this._authenticated;
     }
