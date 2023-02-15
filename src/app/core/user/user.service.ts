@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { map, Observable, ReplaySubject, tap } from 'rxjs';
 import { User } from 'app/core/user/user.types';
 
@@ -24,8 +24,11 @@ export class UserService
 
     get(): Observable<User>
     {
-        return this._httpClient.get<User>('api/common/user').pipe(
+        const headers = new HttpHeaders({'Authorization': `Bearer ${localStorage.getItem("accessToken")}`});
+
+        return this._httpClient.get<User>('http://localhost:8081/fizmath/api/user/info', {headers}).pipe(
             tap((user) => {
+                console.log(user);
                 this._user.next(user);
             })
         );

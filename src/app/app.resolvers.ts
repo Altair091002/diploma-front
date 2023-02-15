@@ -4,6 +4,8 @@ import { forkJoin, Observable } from 'rxjs';
 import { NavigationService } from 'app/core/navigation/navigation.service';
 import { ShortcutsService } from 'app/layout/common/shortcuts/shortcuts.service';
 import { UserService } from 'app/core/user/user.service';
+import {error} from "@angular/compiler-cli/src/transformers/util";
+import {AuthService} from "./core/auth/auth.service";
 
 @Injectable({
     providedIn: 'root'
@@ -16,6 +18,7 @@ export class InitialDataResolver implements Resolve<any>
     constructor(
         private _navigationService: NavigationService,
         private _shortcutsService: ShortcutsService,
+        private _authService: AuthService,
         private _userService: UserService
     )
     {
@@ -37,6 +40,7 @@ export class InitialDataResolver implements Resolve<any>
         return forkJoin([
             this._navigationService.get(),
             this._shortcutsService.getAll(),
+            this._authService.signInUsingToken()
         ]);
     }
 }
