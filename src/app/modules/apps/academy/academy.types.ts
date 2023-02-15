@@ -27,3 +27,10 @@ export interface Course
         completed?: number;
     };
 }
+export interface Step
+{
+    order?: number;
+    title?: string;
+    subtitle?: string;
+    content?: string;
+}

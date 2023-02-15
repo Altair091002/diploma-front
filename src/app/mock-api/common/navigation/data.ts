@@ -37,21 +37,21 @@ export const defaultNavigation: FuseNavigationItem[] = [
         title   : 'Academy Settings',
         subtitle: 'Unique academy settings',
         type    : 'group',
-        icon : 'heroicons_outline:phone',
+        icon : 'heroicons_outline:puzzle',
         children: [
             {
                 id   : 'settings.category',
-                title: 'Course settings',
+                title: 'Category settings',
                 type : 'basic',
                 link : '/academy-settings/category',
-                icon : 'heroicons_outline:pencil',
+                icon : 'heroicons_outline:adjustments',
             },
             {
                 id   : 'settings.course',
                 title: 'Course settings',
                 type : 'basic',
                 link : '/academy-settings/course',
-                icon : 'heroicons_outline:pencil',
+                icon : 'heroicons_outline:adjustments',
             },
         ]
     },
@@ -139,7 +139,7 @@ export const horizontalNavigation: FuseNavigationItem[] = [
         id      : 'academy-settings',
         title   : 'Academy Settings',
         type    : 'group',
-        icon : 'heroicons_outline:phone',
+        icon : 'heroicons_outline:puzzle',
         children: []
     },
     {
