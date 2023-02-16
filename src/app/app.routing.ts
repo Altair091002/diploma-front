@@ -81,23 +81,22 @@ export const appRoutes: Route[] = [
             initialData: InitialDataResolver,
         },
         children   : [
-
-            // Admin tool for category and course
-            {
-                path: 'academy-settings', children: [
-                    {path: 'category', loadChildren: () => import('app/modules/admin/academy-settings/academy-category/academy-category.module').then(m => m.AcademyCategoryModule)},
-                    {path: 'course', loadChildren: () => import('app/modules/admin/academy-settings/academy-course/academy-course.module').then(m => m.AcademyCourseModule)},
-                ]
-            },
-
             // Dashboards
             {path: 'dashboards', children: [
                 {path: 'analytics', loadChildren: () => import('app/modules/admin/dashboards/analytics/analytics.module').then(m => m.AnalyticsModule)},
                 {path: 'finance', loadChildren: () => import('app/modules/admin/dashboards/finance/finance.module').then(m => m.FinanceModule)},
+                    {
+                        path: 'content-management', children: [
+                            {path: 'category', loadChildren: () => import('app/modules/admin/academy-settings/academy-category/academy-category.module').then(m => m.AcademyCategoryModule)},
+                            {path: 'course', loadChildren: () => import('app/modules/admin/academy-settings/academy-course/academy-course.module').then(m => m.AcademyCourseModule)},
+                        ]
+                    },
+
             ]},
 
             // Apps
             {path: 'apps', children: [
+                {path: 'academy', loadChildren: () => import('app/modules/apps/academy/academy.module').then(m => m.AcademyModule)},
                 {path: 'chat', loadChildren: () => import('app/modules/apps/chat/chat.module').then(m => m.ChatModule)},
                 {path: 'file-manager', loadChildren: () => import('app/modules/apps/file-manager/file-manager.module').then(m => m.FileManagerModule)},
             ]},
