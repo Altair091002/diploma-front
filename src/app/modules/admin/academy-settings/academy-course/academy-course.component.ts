@@ -175,6 +175,7 @@ export class AcademyCourseComponent implements OnInit, OnDestroy {
         course.steps,
         course.totalSteps,
         course.featured,
+        course.progress,
         course).subscribe(() => {
 
       // Show a success message
@@ -278,6 +279,7 @@ export class AcademyCourseComponent implements OnInit, OnDestroy {
         course.steps,
         course.totalSteps,
         course.featured,
+        course.progress,
         course).subscribe(() => {
 
       // Show a success message
