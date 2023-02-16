@@ -39,8 +39,6 @@ export class AcademyCourseComponent implements OnInit, OnDestroy {
   selectedCourseForm: UntypedFormGroup;
   private _unsubscribeAll: Subject<any> = new Subject<any>();
 
-  currentSteps: Step[];
-  currentCourseId: number;
 
 
 
@@ -174,6 +172,7 @@ export class AcademyCourseComponent implements OnInit, OnDestroy {
         course.description,
         course.category,
         course.duration,
+        course.steps,
         course.totalSteps,
         course.featured,
         course).subscribe(() => {
@@ -254,14 +253,37 @@ export class AcademyCourseComponent implements OnInit, OnDestroy {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.currentCourseId = result.id;
-      this.currentSteps = result.steps;
-      console.log(this.currentCourseId);
-      console.log(this.currentSteps);
+      const currentCourseId: string = result.id;
+      const currentSteps : Step[] = result.steps;
+
+      for (let i = 0; i < this.courses.length; i++) {
+        if (currentCourseId === this.courses[i].id ){
+          this.courses[i].steps = currentSteps;
+          // this.course$[i].steps = currentSteps;
+          this.updateGivenCourse(this.courses[i])
+        }
+      }
       console.log('The dialog was closed');
     });
   }
 
+  updateGivenCourse (course: Course) {
+    this._academyService.updateCourse(
+        course.id,
+        course.title,
+        course.slug,
+        course.description,
+        course.category,
+        course.duration,
+        course.steps,
+        course.totalSteps,
+        course.featured,
+        course).subscribe(() => {
+
+      // Show a success message
+      this.showFlashMessage('success');
+    });
+  }
   /**
    * Track by function for ngFor loops
    *

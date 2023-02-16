@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {BehaviorSubject, filter, map, Observable, of, switchMap, take, tap, throwError} from 'rxjs';
-import { Category, Course } from 'app/modules/apps/academy/academy.types';
+import { Category, Course , Step} from 'app/modules/apps/academy/academy.types';
 import {isDate} from "lodash-es";
 
 @Injectable({
@@ -151,6 +151,7 @@ export class AcademyService
         description: string,
         category:string,
         duration:number,
+        steps:Step[],
         totalSteps: number,
         featured: boolean,
         course: Course,
@@ -166,6 +167,7 @@ export class AcademyService
                 description,
                 category,
                 duration,
+                steps,
                 totalSteps,
                 featured
             }).pipe(
