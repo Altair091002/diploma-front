@@ -17,41 +17,26 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 link : '/apps/file-manager'
             },
             {
-                id   : 'dashboards.analytics',
-                title: 'Analytics',
-                type : 'basic',
-                icon : 'heroicons_outline:chart-pie',
-                link : '/dashboards/analytics'
-            },
-            {
-                id   : 'dashboards.finance',
-                title: 'Finance',
-                type : 'basic',
-                icon : 'heroicons_outline:cash',
-                link : '/dashboards/finance'
-            }
-        ]
-    },
-    {
-        id      : 'academy-settings',
-        title   : 'Academy Settings',
-        subtitle: 'Unique academy settings',
-        type    : 'group',
-        icon : 'heroicons_outline:puzzle',
-        children: [
-            {
-                id   : 'settings.category',
-                title: 'Category settings',
-                type : 'basic',
-                link : '/academy-settings/category',
-                icon : 'heroicons_outline:adjustments',
-            },
-            {
-                id   : 'settings.course',
-                title: 'Course settings',
-                type : 'basic',
-                link : '/academy-settings/course',
-                icon : 'heroicons_outline:adjustments',
+                id      : 'content-management',
+                title   : 'Content management',
+                type    : 'group',
+                icon : 'heroicons_outline:puzzle',
+                children: [
+                    {
+                        id   : 'management.category',
+                        title: 'Category management',
+                        type : 'basic',
+                        link : '/dashboards/content-management/category',
+                        icon : 'heroicons_outline:adjustments',
+                    },
+                    {
+                        id   : 'management.course',
+                        title: 'Course management',
+                        type : 'basic',
+                        link : '/dashboards/content-management/course',
+                        icon : 'heroicons_outline:adjustments',
+                    },
+                ]
             },
         ]
     },
@@ -65,46 +50,16 @@ export const defaultNavigation: FuseNavigationItem[] = [
             {
                 id   : 'courses.math',
                 title: 'Mathematics',
-                type : 'collapsable',
+                type : 'basic',
                 icon : '',
-                children: [
-                    {
-                        id   : 'math.1',
-                        title: 'Trigonometry',
-                        type : 'basic',
-                        icon : '',
-                        link: ''
-                    },
-                    {
-                        id   : 'math.2',
-                        title: 'Statistics',
-                        type : 'basic',
-                        icon : '',
-                        link : ''
-                    },
-                ]
+                link : '/apps/academy'
             },
             {
                 id   : 'courses.phys',
                 title: 'Physics',
-                type : 'collapsable',
+                type : 'basic',
                 icon : '',
-                children: [
-                    {
-                        id   : 'phys.1',
-                        title: 'Straight-line movement',
-                        type : 'basic',
-                        icon : '',
-                        link : ''
-                    },
-                    {
-                        id   : 'phys.2',
-                        title: 'Newton\'s forces and laws of motion',
-                        type : 'basic',
-                        icon : '',
-                        link : ''
-                    },
-                ]
+                link : '/apps/academy'
             },
         ]
     },
@@ -133,13 +88,6 @@ export const horizontalNavigation: FuseNavigationItem[] = [
         title   : 'Dashboards',
         type    : 'group',
         icon    : 'heroicons_outline:home',
-        children: []
-    },
-    {
-        id      : 'academy-settings',
-        title   : 'Academy Settings',
-        type    : 'group',
-        icon : 'heroicons_outline:puzzle',
         children: []
     },
     {
