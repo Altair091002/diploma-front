@@ -26,6 +26,7 @@ export class AcademyListComponent implements OnInit, OnDestroy
         query$        : new BehaviorSubject(''),
         hideCompleted$: new BehaviorSubject(false)
     };
+    public category: string;
 
     private _unsubscribeAll: Subject<any> = new Subject<any>();
 
@@ -50,6 +51,11 @@ export class AcademyListComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
+        // this._activatedRoute.queryParams.subscribe(params => {
+        //     console.log(params)
+        //     this.category = params['category'];
+        //     console.log('category', this.category)
+        // });
         // Get the categories
         this._academyService.categories$
             .pipe(takeUntil(this._unsubscribeAll))

@@ -44,24 +44,25 @@ export const defaultNavigation: FuseNavigationItem[] = [
         id   : 'courses',
         title: 'Courses',
         subtitle: 'Custom made application designs',
-        type : 'group',
+        type : 'basic',
+        link : '/apps/academy',
         icon : 'heroicons_outline:academic-cap',
-        children: [
-            {
-                id   : 'courses.math',
-                title: 'Mathematics',
-                type : 'basic',
-                icon : '',
-                link : '/apps/academy'
-            },
-            {
-                id   : 'courses.phys',
-                title: 'Physics',
-                type : 'basic',
-                icon : '',
-                link : '/apps/academy'
-            },
-        ]
+        // children: [
+        //     {
+        //         id   : 'courses.math',
+        //         title: 'Mathematics',
+        //         type : 'basic',
+        //         icon : '',
+        //         link : '/apps/academy/?category=Mathematics'
+        //     },
+        //     {
+        //         id   : 'courses.phys',
+        //         title: 'Physics',
+        //         type : 'basic',
+        //         icon : '',
+        //         link : '/apps/academy/?category=Physics'
+        //     },
+        // ]
     },
     {
         id  : 'divider-1',
@@ -93,9 +94,9 @@ export const horizontalNavigation: FuseNavigationItem[] = [
     {
         id   : 'courses',
         title: 'Courses',
-        type : 'group',
+        type : 'basic',
         icon : 'heroicons_outline:academic-cap',
-        children: []
+        link : '/apps/academy'
     },
     {
         id   : 'chat',

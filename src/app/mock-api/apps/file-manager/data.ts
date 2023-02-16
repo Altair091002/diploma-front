@@ -3,25 +3,25 @@ export const items = [
     {
         id         : 'cd6897cb-acfd-4016-8b53-3f66a5b5fc68',
         folderId   : null,
-        name       : 'Personal',
+        name       : 'Lessons',
         createdBy  : 'Brian Hughes',
         createdAt  : 'April 24, 2018',
         modifiedAt : 'April 24, 2018',
         size       : '87 MB',
         type       : 'folder',
-        contents   : '57 files',
+        contents   : '157 files',
         description: 'Personal documents such as insurance policies, tax papers and etc.'
     },
     {
         id         : '6da8747f-b474-4c9a-9eba-5ef212285500',
         folderId   : null,
-        name       : 'Photos',
+        name       : 'Test',
         createdBy  : 'Brian Hughes',
         createdAt  : 'November 01, 2021',
         modifiedAt : 'November 01, 2021',
         size       : '3015 MB',
         type       : 'folder',
-        contents   : '907 files',
+        contents   : '10 files',
         description: 'Personal photos; selfies, family, vacation and etc.'
     },
     {
@@ -63,7 +63,7 @@ export const items = [
     {
         id         : '157adb9a-14f8-4559-ac93-8be893c9f80a',
         folderId   : null,
-        name       : 'DMCA notice #42',
+        name       : 'Course policy',
         createdBy  : 'Brian Hughes',
         createdAt  : 'May 8, 2021',
         modifiedAt : 'May 8, 2021',
@@ -123,7 +123,7 @@ export const items = [
     {
         id         : 'ae908d59-07da-4dd8-aba0-124e50289295',
         folderId   : null,
-        name       : 'Biometric portrait',
+        name       : 'diagrams',
         createdBy  : 'Brian Hughes',
         createdAt  : 'August 29, 2020',
         modifiedAt : 'August 29, 2020',
@@ -135,7 +135,7 @@ export const items = [
     {
         id         : '4038a5b6-5b1a-432d-907c-e037aeb817a8',
         folderId   : null,
-        name       : 'Scanned image 20201012-1',
+        name       : 'schemas',
         createdBy  : 'Brian Hughes',
         createdAt  : 'September 13, 2020',
         modifiedAt : 'September 13, 2020',
@@ -147,7 +147,7 @@ export const items = [
     {
         id         : '630d2e9a-d110-47a0-ac03-256073a0f56d',
         folderId   : null,
-        name       : 'Scanned image 20201012-2',
+        name       : 'charts',
         createdBy  : 'Brian Hughes',
         createdAt  : 'September 14, 2020',
         modifiedAt : 'September 14, 2020',
@@ -183,7 +183,7 @@ export const items = [
     {
         id         : '14fb47c9-6eeb-4070-919c-07c8133285d1',
         folderId   : null,
-        name       : 'Summer budget',
+        name       : 'Budget',
         createdBy  : 'Brian Hughes',
         createdAt  : 'June 02, 2020',
         modifiedAt : 'June 02, 2020',
@@ -196,7 +196,7 @@ export const items = [
     {
         id         : '894e8514-03d3-4f5e-bb28-f6c092501fae',
         folderId   : 'cd6897cb-acfd-4016-8b53-3f66a5b5fc68',
-        name       : 'A personal file',
+        name       : 'Attendance',
         createdBy  : 'Brian Hughes',
         createdAt  : 'June 02, 2020',
         modifiedAt : 'June 02, 2020',
@@ -208,24 +208,24 @@ export const items = [
     {
         id         : '74010810-16cf-441d-a1aa-c9fb620fceea',
         folderId   : 'cd6897cb-acfd-4016-8b53-3f66a5b5fc68',
-        name       : 'A personal folder',
+        name       : 'Mathematics',
         createdBy  : 'Brian Hughes',
         createdAt  : 'November 01, 2021',
         modifiedAt : 'November 01, 2021',
         size       : '3015 MB',
         type       : 'folder',
-        contents   : '907 files',
+        contents   : '57 files',
         description: 'Personal photos; selfies, family, vacation and etc.'
     },
     {
         id         : 'a8c73e5a-8114-436d-ab54-d900b50b3762',
         folderId   : '74010810-16cf-441d-a1aa-c9fb620fceea',
-        name       : 'A personal file within the personal folder',
+        name       : 'Trigonometry',
         createdBy  : 'Brian Hughes',
         createdAt  : 'June 02, 2020',
         modifiedAt : 'June 02, 2020',
         size       : '943 KB',
-        type       : 'XLS',
+        type       : 'PDF',
         contents   : null,
         description: null
     },
@@ -233,7 +233,7 @@ export const items = [
     {
         id         : '12d851a8-4f60-473e-8a59-abe4b422ea99',
         folderId   : '6da8747f-b474-4c9a-9eba-5ef212285500',
-        name       : 'Photos file',
+        name       : 'test results',
         createdBy  : 'Brian Hughes',
         createdAt  : 'June 02, 2020',
         modifiedAt : 'June 02, 2020',
