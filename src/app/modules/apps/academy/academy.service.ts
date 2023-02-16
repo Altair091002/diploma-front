@@ -137,8 +137,10 @@ export class AcademyService
      * @param description
      * @param category
      * @param duration
+     * @param steps
      * @param totalSteps
      * @param featured
+     * @param progress
      * @param course
      */
 
@@ -170,7 +172,8 @@ export class AcademyService
                 duration,
                 steps,
                 totalSteps,
-                featured
+                featured,
+                progress
             }).pipe(
                 map((updatedCourse) => {
 

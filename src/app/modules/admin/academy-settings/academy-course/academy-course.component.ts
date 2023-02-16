@@ -260,8 +260,8 @@ export class AcademyCourseComponent implements OnInit, OnDestroy {
       for (let i = 0; i < this.courses.length; i++) {
         if (currentCourseId === this.courses[i].id ){
           this.courses[i].steps = currentSteps;
-          // this.course$[i].steps = currentSteps;
-          this.updateGivenCourse(this.courses[i])
+          this.course$[i] = this.courses[i];
+          this.updateGivenCourse(this.courses[i]);
         }
       }
       console.log('The dialog was closed');
@@ -269,6 +269,8 @@ export class AcademyCourseComponent implements OnInit, OnDestroy {
   }
 
   updateGivenCourse (course: Course) {
+    console.log("update given course");
+    console.log(course)
     this._academyService.updateCourse(
         course.id,
         course.title,
