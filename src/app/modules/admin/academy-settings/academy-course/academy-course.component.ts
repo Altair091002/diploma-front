@@ -163,6 +163,23 @@ export class AcademyCourseComponent implements OnInit, OnDestroy {
   {
     // Get the course object
     const course = this.selectedCourseForm.getRawValue();
+    for (let i = 0; i < this.courses.length; i++) {
+      if (course.id === this.courses[i].id){
+        course.steps = this.courses[i].steps;
+        course.progress = this.courses[i].progress;
+      }
+    }
+    // id : "63edeb4dc94f2e5faef8659c"
+    // title : "New Title"
+    // slug : "New Slug"
+    // description : "New course description"
+    // category :"mathematics"
+    // duration : 0
+    // steps -------------
+    // totalSteps : 1
+    // featured : false
+    // progress --------
+    console.log("update selected course")
     console.log(course);
     // Update the course on the server
     this._academyService.updateCourse(
