@@ -34,3 +34,8 @@ export interface Step
     subtitle?: string;
     content?: string;
 }
+export interface Progress
+{
+    currentStep?: number;
+    completed?: number;
+}
